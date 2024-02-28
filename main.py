@@ -1,6 +1,7 @@
 import requests
 def ceasar_decrypt(text, shift):
     newTxt=""
+    text=text.lower()
     for i in range(len(text)):
         if text[i].isalpha():
             shifted=ord(text[i])-shift
@@ -21,6 +22,7 @@ def is_eng_word(word):
     return False
 def ceasar_break(text):
     l=[]
+    text=text.lower()
     for i in range(1,26):
         l.append(ceasar_decrypt(text, i).split())
 
@@ -34,5 +36,5 @@ def ceasar_break(text):
     return None
 
 sepatator=" "
-print(sepatator.join(ceasar_break("bqqmf po uif usff")))
-print(sepatator.join(ceasar_break("kudnknaah rb wxc xw cqn cann")))
+print(sepatator.join(ceasar_break("bqqMf po uif usff")))
+print(sepatator.join(ceasar_break("kudnknaah Rb wxc xw cqn cann")))
